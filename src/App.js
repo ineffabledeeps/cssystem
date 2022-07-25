@@ -1,25 +1,52 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import LoginPage from "./pages/LoginPage";
+import Navbar from "./components/Navbar";
+import ChatBox from "./components/ChatBox";
+import SupportButton from "./components/SupportButton";
+import $ from "jquery";
+import Popper from "popper.js";
+import DashboardPage from "./pages/DashboardPage";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      name: "cssystem",
+      token: sessionStorage.getItem("token"),
+      chatbox: false,
+      supportbutton: true,
+    };
+  }
+
+  toggleChatbox = () => {
+    this.setState({
+      chatbox: !this.state.chatbox,
+      supportbutton: !this.state.supportbutton,
+    });
+  };
+
+  render() {
+    const { name,token, chatbox, supportbutton } = this.state;
+
+    return (
+      <div className="App">
+        {supportbutton && <SupportButton fn={this.toggleChatbox} />}
+        <Navbar token={token}/>
+        {chatbox && <ChatBox fn={this.toggleChatbox} />}
+        <BrowserRouter>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                (!this.state.token && <LoginPage />) || (this.state.token && <DashboardPage />)
+              }
+            />
+          </Routes>
+        </BrowserRouter>
+      </div>
+    );
+  }
 }
 
 export default App;

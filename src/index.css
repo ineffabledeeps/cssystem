@@ -11,3 +11,40 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.background{
+height: 100vh;
+background-color: #0093E9;
+background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+}
+         
+.btn-grad {
+  background-image: linear-gradient(to right, #02AAB0 0%, #00CDAC  51%, #02AAB0  100%);
+  background-size: 200% auto;      
+}
+
+
+.text-bluish{
+color: #0093E9 !important;
+}
+
+.text-lightblue{
+  color: rgba(6, 106, 201, 0.1) !important;
+  }
+
+.bg-lightblue{
+background-color: rgba(6, 106, 201, 0.1) !important;
+}
+
+.border-bottom-bluish{
+  border-bottom: #0093E9 3px solid;
+}
+
+.px120{
+  height:"120px" !important;
+   width:"120px" !important;
+}
+
+.text-grad{
+  color: white;
+}
