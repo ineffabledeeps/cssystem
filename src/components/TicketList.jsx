@@ -1,6 +1,21 @@
 import React from "react";
 
 class TicketList extends React.Component {
+
+
+  // async getTickets(){
+  //   return fetch("/messages/get", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify(creds),
+  //   }).then((response) => {
+  //     //this.setState({ messages: response.body });
+  //     return response.json();
+  //   });
+  // }
+
   render() {
     return (
       <table className="table border rounded text-center p-5 bg-white table-hover">
@@ -9,9 +24,12 @@ class TicketList extends React.Component {
             <th scope="col" className="">
               Ticket Number
             </th>
-            <th scope="col">Ticket Name</th>
+            <th scope="col">Creator</th>
+
+            <th scope="col">Resolver</th>
+
             <th scope="col">
-              Created<br></br>
+              CreatedOn<br></br>
               <i className="bi bi-caret-down-fill"></i>
             </th>
             <th scope="col" className="text-end">
