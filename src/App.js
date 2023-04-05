@@ -11,7 +11,7 @@ class App extends React.Component {
     super();
     this.state = {
       name: "cssystem",
-      token: sessionStorage.getItem("token"),
+      token: sessionStorage.getItem("token"),``
       chatbox: false,
       supportbutton: true,
     };
