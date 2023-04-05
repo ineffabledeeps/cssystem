@@ -4,8 +4,6 @@ import LoginPage from "./pages/LoginPage";
 import Navbar from "./components/Navbar";
 import ChatBox from "./components/ChatBox";
 import SupportButton from "./components/SupportButton";
-import $ from "jquery";
-import Popper from "popper.js";
 import DashboardPage from "./pages/DashboardPage";
 
 class App extends React.Component {
